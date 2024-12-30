@@ -1,0 +1,16 @@
+{
+	"name": "@atokingenius/bracketless",
+	"version": "0.0.1",
+	"exports": "./mod.ts",
+	"license": "GNU GPLv3",
+	"tasks": {
+		"run-tests": "deno test mod.ts",
+		"generate-docs": "deno doc --html mod.ts",
+		"run-example": "deno run --allow-net --allow-read example.ts",
+		"lint": "deno lint --compact mod.ts &> ./docs/lint-result.txt",
+		"deploy-example": "deno task generate-docs ; deno task lint ; deno task run-example"
+	},
+	"imports": {
+		"@std/assert": "jsr:@std/assert@1"
+	}
+}
